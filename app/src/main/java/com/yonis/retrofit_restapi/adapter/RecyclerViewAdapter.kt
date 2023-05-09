@@ -19,18 +19,20 @@ class RecyclerViewAdapter(private val CyrptoList:ArrayList<CyrptoModal>, private
     class RowHolder(view:View) : RecyclerView.ViewHolder(view) {
 
         fun bind(cyrptoModal:CyrptoModal, colors: Array<String>, position:Int, listener: Listener){
+
             itemView.setOnClickListener{
                 listener.onItemClick(cyrptoModal)
             }
+
             itemView.setBackgroundColor(Color.parseColor(colors[position%8]))
             itemView.text_name.text = cyrptoModal.currency
             itemView.text_price.text = cyrptoModal.price
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_layout,parent,false)
-
         return RowHolder(view)
     }
 

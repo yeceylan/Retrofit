@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
 
     }
     private fun loadData(){
+
         val retrofit =Retrofit.Builder().baseUrl(BaseURL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -59,7 +60,6 @@ class MainActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
             override fun onFailure(call: Call<List<CyrptoModal>>, t: Throwable) {
                 t.printStackTrace()
             }
-
         })
     }
 
