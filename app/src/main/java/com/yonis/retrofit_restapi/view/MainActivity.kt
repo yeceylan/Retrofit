@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
 
         val layoutManager :RecyclerView.LayoutManager=LinearLayoutManager(this)
         recyclerView.layoutManager=layoutManager
-
         loadData()
+
     }
     private fun loadData(){
         val retrofit =Retrofit.Builder().baseUrl(BaseURL)
