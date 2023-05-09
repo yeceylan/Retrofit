@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
             .build()
             /*addConverterfactory for json file converting
               (modal must be the same names with json file)*/
-
         val service = retrofit.create(CyrptoAPI::class.java)
         val call = service.getData()
 
